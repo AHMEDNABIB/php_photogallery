@@ -12,7 +12,7 @@
                         $user = new User();
                         $result_set = $user->find_all_user();
                         
-                        while($row =  mysqli_fetch_arra($result_set)){
+                        while($row =  mysqli_fetch_array($result_set)){
                             echo $row['username'];
                         }
 
