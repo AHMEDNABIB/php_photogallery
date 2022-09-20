@@ -8,12 +8,20 @@
                             <small>Subheading</small>
                         </h1>
                         <?php
+                          
+                        $user = new User();
+                        $result_set = $user->find_all_user();
+                        
+                        while($row =  mysqli_fetch_arra($result_set)){
+                            echo $row['username'];
+                        }
 
-                        $sql = "SELECT * FROM users where id =1";
-                        $result = $database->query($sql);
+                          $single_user = User:: find_user_by_id(1);
 
-                        $user_found = mysqli_fetch_array($result);
-                        echo $user_found['username'];
+                         echo $single_user['first_name'];
+
+                       
+                        
                        
                         ?>
                         <ol class="breadcrumb">
